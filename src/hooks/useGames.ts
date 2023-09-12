@@ -1,4 +1,6 @@
+import { useState } from "react";
 import useData from "./useData";
+import { Genre } from "./useGenres";
 
 export interface Platform {
   id: number;
@@ -14,10 +16,9 @@ export interface Game {
   metacritic: number;
 }
 
-const useGames = () => {
-  const { data: games, error, isLoading } = useData<Game>("/games");
-
-  return { games, error, isLoading };
-};
+const useGames = (selectedGenre: Genre | null) =>
+  useData<Game>("/games", { params: { genres: selectedGenre?.id } }, [
+    selectedGenre,
+  ]);
 
 export default useGames;
