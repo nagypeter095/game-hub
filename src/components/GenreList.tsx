@@ -1,3 +1,4 @@
+import useData from "../hooks/useData";
 import useGenres from "../hooks/useGenres";
 
 const GenreList = () => {
