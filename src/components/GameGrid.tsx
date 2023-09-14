@@ -12,7 +12,7 @@ interface GameGridProps {
 const GameGrid = ({ selectedGenre }: GameGridProps) => {
   const { data, error, isLoading } = useGames(selectedGenre);
 
-  console.log("gamegrid", selectedGenre);
+  console.log("gamegrid", data);
 
   const skeletons = [1, 2, 3, 4, 5, 6];
 
